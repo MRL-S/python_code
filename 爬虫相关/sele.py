@@ -1,0 +1,22 @@
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.get('https://wordpress-edu-3autumn.localprod.forc.work/wp-login.php')
+time.sleep(2)
+username = driver.find_element_by_id('user_login')
+username.send_keys('spiderman')
+pwd = driver.find_element_by_id('user_pass')
+pwd.send_keys('crawler334566')
+button = driver.find_element_by_id('wp-submit')
+button.click()
+time.sleep(2)
+button1 = driver.find_element_by_partial_link_text('三')
+button1.click()
+time.sleep(2)
+comment = driver.find_element_by_id('comment')
+comment.send_keys('selenium是真的强大')
+button2 = driver.find_element_by_id('submit')
+button2.click()
+time.sleep(2)
+driver.close()
